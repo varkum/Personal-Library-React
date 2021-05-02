@@ -1,0 +1,39 @@
+{
+  "name": "creap",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "*",
+    "bootstrap": "*",
+    "react": "^16.12.0",
+    "react-bootstrap": "*",
+    "react-dom": "^16.12.0",
+    "react-modal": "^3.12.1",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "*",
+    "react-scripts": "^3.2.0",
+    "redux": "^4.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/varkum/personal-library-frontend.git"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
