@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import config from "../config";
 
 let axiosConfig = {
   headers: {
@@ -71,7 +72,7 @@ export default class BookForm extends React.Component {
     }
 
     console.log(book);
-    axios.post('https://personal-library-backend.varkum.repl.co/api/books', book, axiosConfig)
+    axios.post(`${config.backend}/api/books`, book, axiosConfig)
           .then((res) => console.log(res.data));
 
     window.location = '/books';

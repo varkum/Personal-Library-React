@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import BookForm from './book-form.component';
+import config from "../config";
 
 let axiosConfig = {
   headers: {
@@ -37,7 +38,7 @@ export default class AddBook extends React.Component {
   }
 
   handleDelete() {
-    axios.delete('https://personal-library-backend.varkum.repl.co/api/books', axiosConfig)
+    axios.delete(`${config.backend}/api/books`, axiosConfig)
           .then((res) => console.log(res.data));
     window.location = '/books';
   }

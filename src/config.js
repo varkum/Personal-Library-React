@@ -1,3 +1,3 @@
 module.exports = {
-    backend: 'https://Personal-Library-Backend.varkum.repl.co'
+    backend: 'https://personal-library-backend.herokuapp.com'
 }

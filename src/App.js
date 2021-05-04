@@ -15,16 +15,16 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="container-fluid">
-        <Navbar />
+        <Navbar config={config} />
         <Switch>
          <Route exact path="/">
-          {loggedIn ? <Redirect to='/books' /> : <HomePage />}
+          {loggedIn ? <Redirect to='/books' /> : <HomePage config={config} />}
          </Route>
          <Route exact path="/books">
           {loggedIn ? <BookList config={config} /> : <Redirect to='/' />}
          </Route>
          <Route path="/books/top">
-          {loggedIn ? <TopBooks /> : <Redirect to='/' />}
+          {loggedIn ? <TopBooks config={config} /> : <Redirect to='/' />}
          </Route>
          </Switch>
         </div>

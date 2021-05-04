@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+import config from "../config";
 
 let axiosConfig = {
   headers: {
@@ -39,7 +40,7 @@ export default class BookInfo extends React.Component {
 
   handleDelete() {
     
-    axios.delete('https://personal-library-backend.varkum.repl.co/api/books/'+this.props.book['title'], axiosConfig)
+    axios.delete(`${config.backend}/api/books/`+this.props.book['title'], axiosConfig)
       .then((res) => console.log(res.data));
 
     window.location = '/books';
@@ -52,7 +53,7 @@ export default class BookInfo extends React.Component {
 
 
     if(this.state.editComments) {
-      axios.post('https://personal-library-backend.varkum.repl.co/api/books/'+this.props.book['title']+'/edit', {
+      axios.post(`${config.backend}/api/books/`+this.props.book['title']+'/edit', {
         comments: this.state.comments
       }, axiosConfig)
           .then((res) => console.log(res))

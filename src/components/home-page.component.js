@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import config from "../config";
 
 let axiosConfig = {
   headers: {
@@ -45,7 +46,7 @@ export default class HomePage extends React.Component {
         msg: "Please enter username and password!"
       })
     } else {
-    axios.post('https://Personal-Library-Backend.varkum.repl.co/users/register', creds, axiosConfig)
+    axios.post(`${config.backend}/users/register`, creds, axiosConfig)
           .then((res) => {
               localStorage.setItem("jwt", res.data["token"]);
               localStorage.setItem("loggedIn", true)
@@ -77,7 +78,7 @@ export default class HomePage extends React.Component {
     } else {
     
 
-    axios.post('https://Personal-Library-Backend.varkum.repl.co/users/login', creds, axiosConfig)
+    axios.post(`${config.backend}/users/login`, creds, axiosConfig)
         .then((res) => {
           localStorage.setItem('jwt', res.data["token"]);
           localStorage.setItem('loggedIn', true);

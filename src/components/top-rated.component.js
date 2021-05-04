@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import BookInfo from './book-info.component'
+import config from "../config";
 
 export default class TopBooks extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class TopBooks extends React.Component {
   //get top books on load
   componentDidMount() {
     
-    axios.get('https://personal-library-backend.varkum.repl.co/api/books/top', {
+    axios.get(`${config.backend}/api/books/top`, {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         "Access-Control-Allow-Origin": "*",
